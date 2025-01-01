@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import { Manrope, Poppins } from "next/font/google";
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import "@/styles/globals.css";
 import "@/styles/code.css";
 import { siteConfig } from "@/config/site.config";
 import { cn } from "@/lib/utils";
 import RootProviders from "@/components/providers";
-
-const fontSans = Manrope({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const fontHeading = Poppins({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-heading",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.origin),
@@ -67,8 +57,8 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-          fontHeading.variable
+          GeistSans.variable,
+          GeistMono.variable
         )}
       >
         <RootProviders>{children}</RootProviders>

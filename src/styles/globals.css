@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
+/* body {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 @layer base {
   :root {
@@ -185,15 +185,15 @@ body {
 
 /* tailwind styles */
 .head-text-lg {
-  @apply text-3xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight leading-[1.5];
+  @apply text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.5];
 }
 
 .head-text-md {
-  @apply text-2xl md:text-4xl lg:text-5xl font-bold font-heading tracking-tight leading-[1.5];
+  @apply text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.5];
 }
 
 .head-text-sm {
-  @apply text-lg md:text-xl lg:text-2xl font-bold font-heading tracking-tight leading-[1.5];
+  @apply text-lg md:text-xl lg:text-2xl font-bold tracking-tight leading-[1.5];
 }
 
 /* view transition */

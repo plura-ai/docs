@@ -1,6 +1,6 @@
 "use client"
 
-import { Book, FileText, GitFork, Home, ScrollText } from "lucide-react"
+import { Book, ChevronDown, FileText, GitFork, Home, ScrollText } from "lucide-react"
 
 import {
   Sidebar,
@@ -14,31 +14,32 @@ import {
 } from "@/components/ui/sidebar"
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible";
 
 const items = [
   {
     title: "Documentation",
-    url: "/docs",
+    url: "/v1.0",
     icon: Book,
   },
   {
     title: "Installation",
-    url: "/docs/installation",
+    url: "/v1.0/installation",
     icon: FileText,
   },
   {
     title: "Components",
-    url: "/docs/components",
+    url: "/v1.0/components",
     icon: Home,
   },
   {
     title: "License",
-    url: "/docs/license",
+    url: "/v1.0/license",
     icon: ScrollText,
   },
   {
     title: "Contribute",
-    url: "/docs/contribute",
+    url: "/v1.0/contribute",
     icon: GitFork,
   },
 ]
@@ -49,8 +50,15 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
+      <Collapsible defaultOpen className="group/collapsible">
         <SidebarGroup>
-          <SidebarGroupLabel>Docs</SidebarGroupLabel>
+        <SidebarGroupLabel asChild>
+          <CollapsibleTrigger>
+            Plura
+            <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+          </CollapsibleTrigger>
+        </SidebarGroupLabel>
+        <CollapsibleContent>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
@@ -65,7 +73,9 @@ export function AppSidebar() {
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
+          </CollapsibleContent>
         </SidebarGroup>
+        </Collapsible>
       </SidebarContent>
     </Sidebar>
   )

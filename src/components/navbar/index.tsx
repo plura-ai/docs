@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import { marketingConfig } from "@/config/marketing.config";
 import ThemeToggler from "@/components/theme/toggler";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+// import Link from "next/link";
+// import { cn } from "@/lib/utils";
+// import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { siteConfig } from "@/config/site.config";
@@ -17,13 +16,13 @@ export default function Navbar() {
       <div className="flex items-center">
         <div className="relative items-center hidden md:flex gap-2">
           <SidebarTrigger />
-          {marketingConfig.map((item) => (
+          {/* {routesConfig.map((item) => (
             <NavItemComponent
               key={item.title}
               title={item.title}
               href={item.href ?? ""}
             />
-          ))}
+          ))} */}
         </div>
       </div>
       <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -52,28 +51,28 @@ export default function Navbar() {
   );
 }
 
-const NavItemComponent = ({
-  title,
-  href,
-}: {
-  title: string;
-  href: string;
-}) => {
-  const pathname = usePathname();
-  const active =
-    pathname === href || (pathname.startsWith(href) && href !== "/");
+// const NavItemComponent = ({
+//   title,
+//   href,
+// }: {
+//   title: string;
+//   href: string;
+// }) => {
+//   const pathname = usePathname();
+//   const active =
+//     pathname === href || (pathname.startsWith(href) && href !== "/");
 
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "px-3 py-2 text-sm transition-colors",
-        active 
-          ? "text-foreground font-semibold"
-          : "text-muted-foreground hover:text-foreground"
-      )}
-    >
-      {title}
-    </Link>
-  );
-};
+//   return (
+//     <Link
+//       href={href}
+//       className={cn(
+//         "px-3 py-2 text-sm transition-colors",
+//         active 
+//           ? "text-foreground font-semibold"
+//           : "text-muted-foreground hover:text-foreground"
+//       )}
+//     >
+//       {title}
+//     </Link>
+//   );
+// };

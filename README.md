@@ -72,15 +72,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Support
 
-- Documentation: Check the `/docs` directory
+- Documentation: Check the `/v1.0` directory
 - Issues: Submit via GitHub Issues
 - Discussions: Join our GitHub Discussions
 
-## Creator
-
-Created by [rds_agi](https://rdsx.dev)
-
-## Links
-
-- [GitHub Repository](https://github.com/rudrodip/mext15)
-- [Demo Site](https://mdx.rdsx.dev)
