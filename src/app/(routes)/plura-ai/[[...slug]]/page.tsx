@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { docs } from "#site/content";
 
 import type { Metadata } from "next";
 import Balancer from "react-wrap-balancer";
@@ -15,6 +14,7 @@ import { siteConfig } from "@/config/site.config";
 import { absoluteUrl, cn } from "@/lib/utils";
 import { MDXContentRenderer } from "@/components/mdx/mdx-content-renderer";
 import { DashboardTableOfContents } from "@/components/mdx/toc";
+import { pluraAi } from "#site/content";
 
 type DocPageProps = {
     slug: string[];
@@ -23,7 +23,7 @@ type DocPageProps = {
 async function getDocFromParams({ params }: { params: Promise<DocPageProps> }) {
   const parameters = await params;
   const slug = parameters.slug?.join("/") || "";
-  const doc = docs.find((doc) => doc.slugAsParams === slug);
+  const doc = pluraAi.find((doc) => doc.slugAsParams === slug);
 
   if (!doc) {
     return null;
@@ -71,7 +71,7 @@ export async function generateMetadata({
 export async function generateStaticParams(): Promise<
   { slug: string[] }[]
 > {
-  return docs.map((doc) => ({
+  return pluraAi.map((doc) => ({
     slug: doc.slugAsParams.split("/"),
   }));
 }

@@ -72,7 +72,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Support
 
-- Documentation: Check the `/v1.0` directory
+- Documentation: Check the `/guide` directory
 - Issues: Submit via GitHub Issues
 - Discussions: Join our GitHub Discussions
 

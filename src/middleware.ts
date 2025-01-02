@@ -10,10 +10,8 @@ export const config = {
 
 export default function middleware(req: NextRequest) {
   const url = req.nextUrl;
-
-  // If the path is `/`, redirect to `/${routesConfig.currentVersion}`
   if (url.pathname === "/") {
-    url.pathname = `/${routesConfig.currentVersion}`;
+    url.pathname = `${routesConfig.defaultRoute}`;
     return NextResponse.redirect(url);
   }
   return NextResponse.next();
