@@ -36,7 +36,7 @@ export function NavGuide({
   const pathname = usePathname();
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Guide</SidebarGroupLabel>
+      <SidebarGroupLabel>Introduction</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible

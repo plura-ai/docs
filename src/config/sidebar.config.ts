@@ -31,6 +31,7 @@ export const sidebarConfig = {
         title: "Getting Started",
         url: "/guide/getting-started",
         icon: FileText,
+
         },
         {
             title: "Installation",
