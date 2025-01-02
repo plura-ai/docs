@@ -10,6 +10,8 @@ import { sidebarConfig } from "@/config/sidebar.config";
 import { VersionSwitcher } from "./version-switcher";
 import DialogDemo from "../searchbar/Searchbar";
 import ThemeToggler from "../theme/toggler";
+import Newsletter from "./newsletter";
+import { Separator } from "../ui/separator";
 
 
 export function AppSidebar() {
@@ -25,7 +27,9 @@ export function AppSidebar() {
       <SidebarContent>
         <NavGuide items={sidebarConfig.guide} />
       </SidebarContent>
-     <SidebarFooter className="border-t ">
+     <SidebarFooter  >
+     <Newsletter />
+     <Separator />
       <ThemeToggler />
      </SidebarFooter>
     </Sidebar>
