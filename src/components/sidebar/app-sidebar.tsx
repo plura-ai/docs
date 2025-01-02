@@ -16,6 +16,7 @@ import DialogDemo from "../searchbar/Searchbar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { ChevronUp, User2 } from "lucide-react";
 import ThemeToggler from "../theme/toggler";
+import CustomSideFooter from "./custom-footer";
 
 export function AppSidebar() {
   return (
@@ -29,16 +30,10 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <NavGuide items={sidebarConfig.guide} />
-        
       </SidebarContent>
-      <SidebarFooter>
-        <SidebarMenu>
-          <SidebarMenuItem>
-           {/* <Togglebutton/> */}
-           <ThemeToggler/>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
+     <SidebarFooter>
+      <CustomSideFooter/>
+     </SidebarFooter>
     </Sidebar>
   );
 }
