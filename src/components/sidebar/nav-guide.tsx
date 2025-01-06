@@ -31,17 +31,13 @@ export function NavGuide({
       title: string;
       url: string;
       isActive?: boolean;
-      items?: {
-        title: string;
-        url: string;
-      };
     }[];
   }[];
 }) {
   const pathname = usePathname();
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>Guide</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
@@ -62,7 +58,7 @@ export function NavGuide({
                 <SidebarMenuSub>
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
+                      <SidebarMenuSubButton asChild isActive={pathname.includes(subItem.url)}>
                         <a href={subItem.url}>
                           <span className="text-sm dark:text-neutral-300">
                             {subItem.title}
