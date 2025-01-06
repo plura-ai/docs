@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { ChevronRight, type LucideIcon } from "lucide-react"
+import { ChevronRight, type LucideIcon } from "lucide-react";
 
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@/components/ui/collapsible";
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -16,22 +16,23 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "@/components/ui/sidebar"
-import { usePathname } from "next/navigation"
+} from "@/components/ui/sidebar";
+import { usePathname } from "next/navigation";
 
 export function NavGuide({
   items,
 }: {
   items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
+    title: string;
+    url: string;
+    icon?: LucideIcon;
+    isActive?: boolean;
     items?: {
-      title: string
-      url: string
-    }[]
-  }[]
+      title: string;
+      url: string;
+      isActive?: boolean;
+    }[];
+  }[];
 }) {
   const pathname = usePathname();
   return (
@@ -59,8 +60,11 @@ export function NavGuide({
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild isActive={pathname.includes(subItem.url)}>
                         <a href={subItem.url}>
-                          <span>{subItem.title}</span>
+                          <span className="text-sm dark:text-neutral-300">
+                            {subItem.title}
+                          </span>
                         </a>
+                        
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   ))}
@@ -71,5 +75,5 @@ export function NavGuide({
         ))}
       </SidebarMenu>
     </SidebarGroup>
-  )
+  );
 }
