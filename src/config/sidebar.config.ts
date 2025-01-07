@@ -1,5 +1,5 @@
 
-import { Code, FileText, GitFork, GitForkIcon, ScrollText } from "lucide-react";
+import { FileText, GitFork, ScrollText } from "lucide-react";
 
 
 
