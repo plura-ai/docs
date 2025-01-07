@@ -2,11 +2,8 @@
 
 import {
   ArrowUpRight,
-  CircleFadingPlus,
   File,
-  FileInput,
   Files,
-  FolderPlus,
   HomeIcon,
   Search,
 } from "lucide-react";
