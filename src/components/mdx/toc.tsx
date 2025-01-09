@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
+import Newsletter from "../sidebar/newsletter";
 
 interface TocEntry {
   items?: TocEntry[];
@@ -31,10 +32,15 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   const mounted = useMounted();
 
   return mounted ? (
-    <div className="space-y-2">
-      <p className="font-medium">On this page</p>
-      <Tree tree={toc} activeItem={activeHeading} />
-    </div>
+      <div className="h-[calc(100vh-3.5rem)] flex flex-col justify-between pb-10">
+        <div className="space-y-2">
+          <p className="font-medium">On this page</p>
+          <Tree tree={toc} activeItem={activeHeading} />
+        </div>
+
+        <Newsletter />
+      </div>
+
   ) : null;
 }
 
