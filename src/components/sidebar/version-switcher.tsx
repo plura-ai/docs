@@ -28,6 +28,7 @@ export function VersionSwitcher({
     <SidebarMenu>
       <SidebarMenuItem>
         <DropdownMenu>
+          {/* Insert here */}
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
