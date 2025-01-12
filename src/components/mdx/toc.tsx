@@ -33,7 +33,10 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   return mounted ? (
     <div className="space-y-2">
       <p className="font-medium">On this page</p>
-      <Tree tree={toc} activeItem={activeHeading} />
+      <div className="flex flex-col space-x-1 relative">
+        <div className="w-1 flex h-full  bg-neutral-900 absolute"></div>
+        <Tree tree={toc} activeItem={activeHeading} />
+      </div>
     </div>
   ) : null;
 }
@@ -50,7 +53,7 @@ function useActiveItem(itemIds: (string | undefined)[]) {
           }
         });
       },
-      { rootMargin: `0% 0% -60% 0%` }
+      { rootMargin: `0% 0% -40% 0%` }
     );
 
     itemIds?.forEach((id) => {
@@ -88,20 +91,24 @@ interface TreeProps {
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
-  return tree.length && level < 3 ? (
-    <ul className={cn("m-0 list-none text-sm", { "pl-4": level !== 1 })}>
+  console.log
+  return tree.length && level < 5 ? (
+    <ul className={cn("m-0 list-none text-sm")}>
       {tree.map((item, index) => {
         return (
-          <li key={index} className={cn("mt-0 pt-2")}>
+          <li key={index} className={cn("mt-0 ")}>
             <a
               href={item.url}
               className={cn(
-                "inline-block no-underline px-1 py-0.5 rounded",
+                "inline-block no-underline py-2 p-2 relative rounded hover:text-neutral-200 transition-all duration-300 ease-in-out",
                 item.url === `#${activeItem}`
-                  ? "text-primary font-medium bg-secondary"
+                  ? "text-primary font-medium "
                   : "text-muted-foreground"
               )}
             >
+              {item.url === `#${activeItem}` && (
+                <span className="bg-neutral-400 rounded h-full w-1 ml-[-3px] absolute left-0 top-0"></span>
+              )}
               {item.title}
             </a>
             {item.items?.length ? (
