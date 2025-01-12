@@ -6,6 +6,7 @@ import "@/styles/code.css";
 import { siteConfig } from "@/config/site.config";
 import { cn } from "@/lib/utils";
 import RootProviders from "@/components/providers";
+// import { SiteFooter } from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.origin),
@@ -61,7 +62,10 @@ export default function RootLayout({
           GeistMono.variable
         )}
       >
-        <RootProviders>{children}</RootProviders>
+        <RootProviders>
+          {children}
+        </RootProviders>
+        {/* <SiteFooter /> */}
       </body>
     </html>
   );

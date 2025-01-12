@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
+import Newsletter from "../sidebar/newsletter";
 
 interface TocEntry {
   items?: TocEntry[];
@@ -31,9 +32,21 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   const mounted = useMounted();
 
   return mounted ? (
-    <div className="space-y-2">
-      <p className="font-medium">On this page</p>
-      <Tree tree={toc} activeItem={activeHeading} />
+    <div className="h-[calc(100vh-3.5rem)] flex flex-col justify-between pb-10">
+      {/* Added a wrapper div with overflow styling */}
+      <div className="space-y-2 overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+        <p className="font-medium sticky top-0 bg-background pt-2 pb-2">On this page</p>
+        <div className="relative h-fit">
+          <span className= "w-1 h-full bg-neutral-900 absolute -z-10"></span>
+        
+          <Tree tree={toc} activeItem={activeHeading} />
+        </div>
+      </div>
+
+      {/* Newsletter component remains at bottom */}
+      <div className="mt-4">
+        <Newsletter />
+      </div>
     </div>
   ) : null;
 }

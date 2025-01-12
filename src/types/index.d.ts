@@ -54,3 +54,10 @@ export interface NpmCommands {
   __pnpmCommand__?: string
   __bunCommand__?: string
 }
+
+export interface projectDetails {
+  title: string,
+  description: string,
+  imageSrc: string,
+  path: string
+}

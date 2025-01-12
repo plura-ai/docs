@@ -7,20 +7,22 @@ import {
 } from "@/components/ui/sidebar";
 import { NavGuide } from "./nav-guide";
 import { sidebarConfig } from "@/config/sidebar.config";
-import { VersionSwitcher } from "./version-switcher";
+import { ProjectSwitcher } from "./project-switcher";
 import DialogDemo from "../searchbar/Searchbar";
 import ThemeToggler from "../theme/toggler";
-import Newsletter from "./newsletter";
 import { Separator } from "../ui/separator";
+import { AppHeader } from "./app-header";
 
 
 export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <VersionSwitcher
-          versions={sidebarConfig.versions}
-          defaultVersion={sidebarConfig.versions[0]}
+        {/* Plura Logo with Github link in an ellipsis */}
+        <AppHeader/>
+        <ProjectSwitcher
+          options={sidebarConfig.projectOptions}
+          defaultOption={sidebarConfig.projectOptions[0]}
         />
         <DialogDemo />
       </SidebarHeader>
@@ -28,7 +30,6 @@ export function AppSidebar() {
         <NavGuide items={sidebarConfig.guide} />
       </SidebarContent>
      <SidebarFooter  >
-     <Newsletter />
      <Separator />
       <ThemeToggler />
      </SidebarFooter>
