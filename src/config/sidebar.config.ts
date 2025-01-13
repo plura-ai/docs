@@ -1,4 +1,4 @@
-import { FileText, GitFork, ScrollText } from "lucide-react";
+import { FileText, GitFork, MessageCircleQuestion, ScrollText } from "lucide-react";
 
 export const sidebarConfig = {
   projectOptions: [
@@ -30,60 +30,76 @@ export const sidebarConfig = {
       items: [
         {
           title: "What is Plura?",
-          url: "/guide/introduction/what-is-plura",
+          url: "/guide/introduction/plura",
         },
         {
-          title: "Why Plura?",
-          url: "/guide/introduction/why-plura",
+          title: "What is chatbot SDK?",
+          url: "/guide/introduction/ai-sdk/chatbot",
         },
         {
-          title: "Features",
-          url: "/guide/introduction/features",
-        },
-        {
-          title: "Who can use Plura?",
-          url: "/guide/introduction/who-can-use-plura",
-        },
-      ],
-    },
-    {
-      title: "Getting Started",
-      url: "/guide/getting-started",
-      icon: FileText,
-      items: [
-        {
-          title: "Installation",
-          url: "/guide/getting-started/installation",
-
-        },{
-            title:"Add to existing repository",
-            url:"/guide/getting-started/add-to-existing-repository"
-        },{
-            title:"Add to new repository",
-            url:"/guide/getting-started/add-to-new-repository"
+          title: "What is agents SDK?",
+          url: "/guide/introduction/ai-sdk/agents",
         }
       ],
-    },
-    // {
-    //   title: "Installation",
-    //   url: "/guide/installation",
-    //   icon: Code,
-    // },
-    {
-      title: "License",
-      url: "/guide/license",
-      icon: ScrollText,
     },
     {
       title: "Contribute",
       url: "/guide/contribute",
       icon: GitFork,
+      isActive: true,
       items:[
         {
-            title:"GitHub",
-            url:"https://github.com/Plura-App/Plura",
-        }
+          title: "Plura",
+          url: "/guide/contribute/plura",
+
+        },
+        {
+            title:"Chatbot SDK",
+            url:"/guide/contribute/ai-sdk/chatbot"
+        },
+        {
+            title:"Agents SDK",
+            url:"/guide/contribute/ai-sdk/agents"
+        },
       ]
+    },
+    {
+      title: "License",
+      url: "/guide/license",
+      icon: ScrollText,
+      isActive: false,
+      items: [
+        {
+          title: "Plura",
+          url: "/guide/license/plura",
+
+        },
+        {
+            title:"Chatbot SDK",
+            url:"/guide/license/ai-sdk/chatbot"
+        },
+        {
+            title:"Agents SDK",
+            url:"/guide/license/ai-sdk/agents"
+        },
+      ],
+    },
+    {
+      title: "Support",
+      url: "/guide/support",
+      icon: MessageCircleQuestion,
+      isActive: false,
+      items: [
+        {
+          title: "Discord Community",
+          url: "https://l.devwtf.in/plura-dc",
+
+        },
+        {
+            title:"Github Issues",
+            url:"https://github.com/plura-ai"
+        }
+      ],
     },
   ],
   plura: [],
