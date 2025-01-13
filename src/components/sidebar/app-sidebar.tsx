@@ -18,6 +18,7 @@ import { usePathname } from "next/navigation";
 export function AppSidebar() {
   const pathname = usePathname();
   const sidebarItem = pathname.includes("guide") ? sidebarConfig.guide : pathname.includes("ai-sdk") ? sidebarConfig.aiSdk : sidebarConfig.plura;
+  const defaultProject = pathname.includes("guide") ? 1 : pathname.includes("ai-sdk") ? 2 : 0;
 
   return (
     <Sidebar>
@@ -26,7 +27,7 @@ export function AppSidebar() {
         <AppHeader/>
         <ProjectSwitcher
           options={sidebarConfig.projectOptions}
-          defaultOption={sidebarConfig.projectOptions[0]}
+          defaultOption={sidebarConfig.projectOptions[defaultProject]}
         />
         <SearchBar />
       </SidebarHeader>
