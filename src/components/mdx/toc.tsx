@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
+import Newsletter from "../sidebar/newsletter";
 
 interface TocEntry {
   items?: TocEntry[];
@@ -36,6 +37,12 @@ export function DashboardTableOfContents({ toc }: TocProps) {
       <div className="flex flex-col space-x-1 relative">
         <div className="w-1 flex h-full  bg-neutral-900 absolute"></div>
         <Tree tree={toc} activeItem={activeHeading} />
+        </div>
+      </div>
+
+      {/* Newsletter component remains at bottom */}
+      <div className="mt-4">
+        <Newsletter />
       </div>
     </div>
   ) : null;
