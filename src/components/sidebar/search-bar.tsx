@@ -19,8 +19,9 @@ import {
   CommandShortcut,
 } from "@/components/ui/command";
 import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
-export default function DialogDemo() {
+export default function SearchBar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -37,9 +38,10 @@ export default function DialogDemo() {
 
   return (
     <>
-      <button
-        className="inline-flex h-9 w-full rounded-lg border border-input bg-card dark:bg-neutral-800/60 px-3 py-2 text-sm text-foreground shadow-sm shadow-black/5 transition-shadow placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20"
-        onClick={() => setOpen(true)}
+      <Button
+      variant={"outline"}
+      className="rounded-xl"
+       onClick={() => setOpen(true)}
       >
         <span className="flex grow items-center">
           <Search
@@ -53,7 +55,7 @@ export default function DialogDemo() {
         <kbd className="-me-0 ms-10 inline-flex h-8 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.725rem] font-medium text-muted-foreground/70">
           ⌘K
         </kbd>
-      </button>
+      </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>

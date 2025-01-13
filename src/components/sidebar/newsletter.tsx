@@ -9,24 +9,21 @@ import {
 import { SidebarInput } from "@/components/ui/sidebar";
 export default function Newsletter() {
   return (
-    <Card className="shadow-none">
-      <form>
-        <CardHeader className="p-4 pb-0">
-          <CardTitle className="text-sm">Subscribe to our newsletter</CardTitle>
+    <Card className="shadow-none p-2">
+        <CardHeader className="p-2">
+          <CardTitle className="text-sm">Get quick updates!</CardTitle>
           <CardDescription>
             Opt-in to receive updates and news about the Plura.
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid gap-2.5 p-4">
+        <CardContent className="grid gap-2.5 p-2">
           <SidebarInput type="email" placeholder="Email" />
           <Button
-            className="w-full bg-sidebar-primary text-sidebar-primary-foreground shadow-none"
             size="sm"
           >
             Subscribe
           </Button>
         </CardContent>
-      </form>
     </Card>
   );
 }

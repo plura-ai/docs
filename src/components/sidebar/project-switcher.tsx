@@ -16,7 +16,6 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { projectDetails } from "@/types"
-import { usePathname } from "next/navigation"
 
 export function ProjectSwitcher({
   options,
@@ -26,7 +25,6 @@ export function ProjectSwitcher({
   defaultOption: projectDetails
 }) {
   const [selectedOption, setSelectedOption] = React.useState<projectDetails>(defaultOption)
-  const pathname = usePathname()
   const router = useRouter()
 
   function handleChange(title: string) {
@@ -43,16 +41,14 @@ export function ProjectSwitcher({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
-              size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground h-max rounded-xl"
-              isActive={pathname.includes(selectedOption.path)}
+              className="h-max rounded-xl bg-sidebar hover:bg-secondary"
             >
               <Image
                 src={selectedOption.imageSrc}
                 alt="logo"
-                className="invert dark:invert-0"
-                width={20}
-                height={20}
+                className="invert dark:invert-0 self-start"
+                width={30}
+                height={30}
               />
               <div className="flex flex-col gap-0.5 leading-none h-max">
                 <span className="font-semibold">{selectedOption.title}</span>
@@ -75,9 +71,9 @@ export function ProjectSwitcher({
                   <Image
                     src={option.imageSrc}
                     alt={option.title}
-                    width={15}
-                    height={15}
-                    className="invert dark:invert-0"
+                    className="invert dark:invert-0 self-start"
+                width={30}
+                height={30}
                   />
                   <div className="flex flex-wrap flex-col justify-start">
                     <p className="text-sm font-semibold">{option.title}</p>

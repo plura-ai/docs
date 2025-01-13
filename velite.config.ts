@@ -22,6 +22,7 @@ export const guide = defineCollection({
       slug: s.path(),
       title: s.string(),
       description: s.string(),
+      github: s.string().optional(),
       published: s.boolean().default(false),
       date: s.coerce.date().default(new Date()),
       label: s.enum(["New", "Updated"]).optional(),

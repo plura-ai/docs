@@ -3,19 +3,19 @@ import { FileText, GitFork, ScrollText } from "lucide-react";
 export const sidebarConfig = {
   projectOptions: [
     {
-      title: "Guide",
-      description: "Easily set up and configure Plura.",
-      imageSrc: "/plura-logo.png",
-      path: "/guide"
-    },
-    {
       title: "Plura",
       description: "Boost support with an AI-driven assistant.",
       imageSrc: "/plura-logo.png",
       path: "/plura"
     },
     {
-      title: "Ai-SDK",
+      title: "Guide",
+      description: "Easily set up and configure Plura.",
+      imageSrc: "/plura-logo.png",
+      path: "/guide"
+    },
+    {
+      title: "@plura-ai",
       description: "Seamlessly automate support on your platform.",
       imageSrc: "/plura-logo.png",
       path: "/ai-sdk"
@@ -86,4 +86,6 @@ export const sidebarConfig = {
       ]
     },
   ],
+  plura: [],
+  aiSdk: [],
 };

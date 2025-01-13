@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/collapsible";
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -18,7 +17,7 @@ import {
 } from "@/components/ui/sidebar";
 import { usePathname } from "next/navigation";
 
-export function NavGuide({
+export function SideBarNav({
   items,
 }: {
   items: {
@@ -36,7 +35,7 @@ export function NavGuide({
   const pathname = usePathname();
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Guide</SidebarGroupLabel>
+      {/* <SidebarGroupLabel>Guide</SidebarGroupLabel> */}
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
