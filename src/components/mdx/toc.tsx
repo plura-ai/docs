@@ -35,9 +35,8 @@ export function DashboardTableOfContents({ toc }: TocProps) {
     <div className="space-y-2">
       <p className="font-medium">On this page</p>
       <div className="flex flex-col space-x-1 relative">
-        <div className="w-1 flex h-full  bg-neutral-900 absolute"></div>
+        <div className="w-1 flex h-full bg-neutral-900 absolute"></div>
         <Tree tree={toc} activeItem={activeHeading} />
-        </div>
       </div>
 
       {/* Newsletter component remains at bottom */}
@@ -98,18 +97,17 @@ interface TreeProps {
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
-  console.log
   return tree.length && level < 5 ? (
     <ul className={cn("m-0 list-none text-sm")}>
       {tree.map((item, index) => {
         return (
-          <li key={index} className={cn("mt-0 ")}>
+          <li key={index} className={cn("mt-0")}>
             <a
               href={item.url}
               className={cn(
                 "inline-block no-underline py-2 p-2 relative rounded hover:text-neutral-200 transition-all duration-300 ease-in-out",
                 item.url === `#${activeItem}`
-                  ? "text-primary font-medium "
+                  ? "text-primary font-medium"
                   : "text-muted-foreground"
               )}
             >
