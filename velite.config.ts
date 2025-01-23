@@ -4,7 +4,7 @@ import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
-import { visit } from "unist-util-visit"
+import { visit } from "unist-util-visit";
 import { LineElement } from "rehype-pretty-code";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
@@ -12,7 +12,6 @@ const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
   slugAsParams: data.slug.split("/").slice(1).join("/"),
 });
-
 
 export const guide = defineCollection({
   name: "Guide",
@@ -23,6 +22,7 @@ export const guide = defineCollection({
       title: s.string(),
       description: s.string(),
       github: s.string().optional(),
+      contributors: s.string(),
       published: s.boolean().default(false),
       date: s.coerce.date().default(new Date()),
       label: s.enum(["New", "Updated"]).optional(),
@@ -35,7 +35,7 @@ export const guide = defineCollection({
     .transform(computedFields),
 });
 
-export const plura =  defineCollection({
+export const plura = defineCollection({
   name: "Plura",
   pattern: "plura/**/*.mdx",
   schema: s
@@ -55,7 +55,7 @@ export const plura =  defineCollection({
     .transform(computedFields),
 });
 
-export const pluraAi =  defineCollection({
+export const pluraAi = defineCollection({
   name: "PluraAi",
   pattern: "plura-ai/**/*.mdx",
   schema: s
@@ -112,35 +112,35 @@ export default defineConfig({
         visit(tree, (node) => {
           if (node?.type === "element" && node?.tagName === "div") {
             if ("data-rehype-pretty-code-title" in node.properties) {
-              node.properties["data-rehype-pretty-code-title"] = "Code"
+              node.properties["data-rehype-pretty-code-title"] = "Code";
             }
 
             if (!("data-rehype-pretty-code-fragment" in node.properties)) {
-              return
+              return;
             }
 
-            const preElement = node.children.at(-1)
+            const preElement = node.children.at(-1);
             if (preElement.tagName !== "pre") {
-              return
+              return;
             }
 
             preElement.properties["__withMeta__"] =
-              node.children.at(0).tagName === "div"
-            preElement.properties["__rawString__"] = node.__rawString__
+              node.children.at(0).tagName === "div";
+            preElement.properties["__rawString__"] = node.__rawString__;
 
             if (node.__src__) {
-              preElement.properties["__src__"] = node.__src__
+              preElement.properties["__src__"] = node.__src__;
             }
 
             if (node.__event__) {
-              preElement.properties["__event__"] = node.__event__
+              preElement.properties["__event__"] = node.__event__;
             }
 
             if (node.__style__) {
-              preElement.properties["__style__"] = node.__style__
+              preElement.properties["__style__"] = node.__style__;
             }
           }
-        })
+        });
       },
       [
         rehypeAutolinkHeadings,

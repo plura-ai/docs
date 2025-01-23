@@ -15,6 +15,7 @@ import { absoluteUrl, cn } from "@/lib/utils";
 import { MDXContentRenderer } from "@/components/mdx/mdx-content-renderer";
 import { DashboardTableOfContents } from "@/components/mdx/toc";
 import { guide } from "#site/content";
+import { ContributorsList } from "@/components/contributors/contributors";
 
 type DocPageProps = {
     slug: string[];
@@ -128,9 +129,16 @@ export default async function GuidePage({ params }: { params: Promise<DocPagePro
         </div>
       </div>
       <div className="hidden text-sm xl:block">
-        <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] pt-4">
+        <div className="sticky top-10 -mt-8 h-[calc(100vh-3.5rem)] pt-4">
           {doc.toc.visible && (
-            <DashboardTableOfContents toc={doc.toc.content} github={doc.github} />
+            <>
+              
+              <DashboardTableOfContents
+                toc={doc.toc.content}
+                github={doc.github}
+              />
+              <ContributorsList contributorUrl={doc.contributors} />
+            </>
           )}
         </div>
       </div>
