@@ -53,7 +53,7 @@ export async function generateMetadata({
         {
           url: siteConfig.og,
           width: 2880,
-          height: 1800,
+          height: 1800, 
           alt: siteConfig.name,
         },
       ],

@@ -74,6 +74,15 @@ export const pluraAi =  defineCollection({
     .transform(computedFields),
 });
 
+export const contributors = defineCollection({
+  name: "Contributors",
+  pattern: "contributors/**/*.mdx",
+  schema: s
+    .object({
+      body: s.mdx(),
+    })
+})
+
 export default defineConfig({
   root: "content",
   output: {
@@ -83,7 +92,7 @@ export default defineConfig({
     name: "[name]-[hash:6].[ext]",
     clean: true,
   },
-  collections: { guide, plura, pluraAi },
+  collections: { guide, plura, pluraAi, contributors },
   mdx: {
     rehypePlugins: [
       rehypeSlug,

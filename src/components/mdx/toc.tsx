@@ -1,10 +1,14 @@
 "use client";
 
 import * as React from "react";
-
+// import { contributors } from "#site/content";
+// import { MDXContentRenderer } from "./mdx-content-renderer";
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
 import Newsletter from "../sidebar/newsletter";
+import { MDXContentRenderer } from "./mdx-content-renderer";
+import { contributors } from "#site/content";
+
 
 interface TocEntry {
   items?: TocEntry[];
@@ -17,6 +21,7 @@ interface TocProps {
 }
 
 export function DashboardTableOfContents({ toc }: TocProps) {
+
   const itemIds = React.useMemo(
     () =>
       toc
@@ -33,7 +38,12 @@ export function DashboardTableOfContents({ toc }: TocProps) {
 
   return mounted ? (
     <div className="h-[calc(100vh-3.5rem)] flex flex-col justify-between pb-10">
-      {/* Added a wrapper div with overflow styling */}
+      {/* Add Contributos here */}
+
+      <div className="flex flex-col">
+        <MDXContentRenderer code={ contributors[0].body } />
+      </div>
+
       <div className="space-y-2 overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
         <p className="font-medium sticky top-0 bg-background pt-2 pb-2">On this page</p>
         <div className="relative h-fit">

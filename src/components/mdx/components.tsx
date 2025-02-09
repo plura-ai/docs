@@ -17,6 +17,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { 
+  Avatar,
+  AvatarImage,
+  AvatarFallback
+ } from "@radix-ui/react-avatar";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Files, File, Folder } from "@/components/ui/files";
@@ -27,6 +32,9 @@ import Link from "next/link";
 import { CodeBlockWrapper } from "./code-block-wrapper";
 
 export const mdxComponents = {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
   Accordion,
   AccordionContent,
   AccordionItem,

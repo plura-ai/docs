@@ -1,0 +1,28 @@
+
+export const contributors = [
+  { name: "John Doe", role: "Frontend Engineer", avatar: "https://github.com/shadcn.png" },
+  { name: "Jane Smith", role: "Backend Engineer", avatar: "https://github.com/shadcn.png" },
+  { name: "Alice Brown", role: "UI/UX Designer", avatar: "https://github.com/shadcn.png" },
+  { name: "Michael Lee", role: "Full Stack Developer", avatar: "https://github.com/shadcn.png" },
+  { name: "Sophia Patel", role: "Technical Writer", avatar: "https://github.com/shadcn.png" }
+];
+
+<div>
+  ### Contributors
+
+  <div className="grid grid-cols-1 gap-2">
+    {contributors.map((contributor, index) => (
+      <Card key={index} className="flex flex-row items-center justify-between p-4">
+        <div className="text-left">
+          <p className="text-sm font-semibold">{contributor.name}</p>
+          <p className="text-xs text-gray-500">{contributor.role}</p>
+        </div>
+        <Avatar className="w-8 h-8">
+          <AvatarImage src={contributor.avatar} alt={contributor.name} />
+          <AvatarFallback>{contributor.name[0]}</AvatarFallback>
+        </Avatar>
+      </Card>
+    ))}
+  </div>
+</div>
+
