@@ -2,7 +2,6 @@
 export const contributors = [
   { name: "Alice Johnson", role: "Technical Writer", avatar: "https://github.com/shadcn.png" },
   { name: "Bob Williams", role: "Docs Maintainer", avatar: "https://github.com/shadcn.png" },
-  { name: "Charlie Brown", role: "API Documentation Lead", avatar: "https://github.com/shadcn.png" },
   { name: "David Wilson", role: "Content Strategist", avatar: "https://github.com/shadcn.png" },
   { name: "Emma Davis", role: "Markdown Specialist", avatar: "https://github.com/shadcn.png" },
   { name: "Frank Miller", role: "Docs Automation Engineer", avatar: "https://github.com/shadcn.png" },
@@ -19,7 +18,7 @@ export const maxVisibleContributors = 3;
     <div className="grid grid-cols-1 gap-2">
       {contributors.slice(0, maxVisibleContributors).map((contributor, index) => (
         <Card key={index} className="flex flex-row items-center justify-between py-2 px-3">
-          <div className="text-left flex flex-col gap-1 p-1 w-fit">
+          <div className="text-left flex flex-col gap-1 p-1 w-36">
             <CardTitle className="text-sm">{contributor.name}</CardTitle>
             <CardDescription className="text-xs">{contributor.role}</CardDescription>
           </div>
@@ -29,10 +28,10 @@ export const maxVisibleContributors = 3;
           </Avatar>
         </Card>
       ))}
-      {contributors.length > maxVisibleContributors && (
-        <div className="text-sm text-muted-foreground text-center">
+    </div>
+    {contributors.length > maxVisibleContributors && (
+        <div className="text-sm pl-5 text-muted-foreground">
           +{contributors.length - maxVisibleContributors} more
         </div>
-      )}
-    </div>
+    )}
 </div>

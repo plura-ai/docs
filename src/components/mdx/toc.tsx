@@ -1,8 +1,6 @@
 "use client";
 
 import * as React from "react";
-// import { contributors } from "#site/content";
-// import { MDXContentRenderer } from "./mdx-content-renderer";
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/hooks/use-mounted";
 import Newsletter from "../sidebar/newsletter";
@@ -37,7 +35,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
   const mounted = useMounted();
 
   return mounted ? (
-    <div className="h-[calc(100vh-3.5rem)] flex flex-col justify-between pb-10">
+    <div className="h-[calc(100vh-3.5rem)] flex flex-col justify-between">
       {/* Add Contributos here */}
 
       <div className="flex flex-col">

@@ -128,7 +128,7 @@ export default async function GuidePage({ params }: { params: Promise<DocPagePro
         </div>
       </div>
       <div className="hidden text-sm xl:block">
-        <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] pt-4">
+        <div className="sticky top-8 h-[calc(100vh-3.5rem)] pt-4">
           {doc.toc.visible && (
             <DashboardTableOfContents toc={doc.toc.content} />
           )}
